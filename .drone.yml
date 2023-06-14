@@ -237,7 +237,7 @@ steps:
     path: /var/run/docker.sock
   when:
     instance:
-      - drone-publish.rancher.io
+      - drone-pr.rancher.io
     ref:
       include:
         - "refs/heads/master"
