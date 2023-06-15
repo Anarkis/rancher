@@ -275,8 +275,8 @@ steps:
   commands:
   - "cp -r ./bin/* ./package/"
   when:
-    instance:
-      - drone-publish.rancher.io
+    # instance:
+    #   - drone-publish.rancher.io
     ref:
       include:
         - "refs/heads/master"
