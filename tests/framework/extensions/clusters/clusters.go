@@ -16,8 +16,8 @@ import (
 	"github.com/rancher/rancher/tests/framework/clients/rancher"
 	management "github.com/rancher/rancher/tests/framework/clients/rancher/generated/management/v3"
 	v1 "github.com/rancher/rancher/tests/framework/clients/rancher/v1"
+	"github.com/rancher/rancher/tests/framework/extensions/defaults"
 	"github.com/rancher/rancher/tests/framework/pkg/wait"
-	"github.com/rancher/rancher/tests/integration/pkg/defaults"
 	rancherProvisioning "github.com/rancher/rancher/tests/v2/validation/provisioning"
 	"github.com/rancher/wrangler/pkg/summary"
 	"github.com/sirupsen/logrus"
@@ -914,4 +914,20 @@ func WatchAndWaitForCluster(steveClient *v1.Client, kubeProvisioningClient *kube
 
 	err = wait.WatchWait(result, IsProvisioningClusterReady)
 	return err
+}
+
+// GetProvisioningClusterByName is a helper function to get cluster object with the cluster name
+func GetProvisioningClusterByName(client *rancher.Client, clusterName string, namespace string) (*apisV1.Cluster, *v1.SteveAPIObject, error) {
+	clusterObj, err := client.Steve.SteveType(ProvisioningSteveResouceType).ByID(namespace + "/" + clusterName)
+	if err != nil {
+		return nil, nil, err
+	}
+
+	cluster := new(apisV1.Cluster)
+	err = v1.ConvertToK8sType(clusterObj, &cluster)
+	if err != nil {
+		return nil, nil, err
+	}
+
+	return cluster, clusterObj, nil
 }
