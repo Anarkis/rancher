@@ -299,7 +299,7 @@ steps:
     tag: ${DRONE_BRANCH/release\//}-${DRONE_COMMIT}-linux-amd64
     password:
       from_secret: docker_password
-    repo: rancher/rancher
+    repo: luistt/rancher
     username:
       from_secret: docker_username
   volumes:
