@@ -287,7 +287,7 @@ steps:
     - tag
 
 - name: docker-publish-head
-  image: luistt/drone-publisher:amd64
+  image: rancherlabs/drone-publisher:v0.0.1
   settings:
     purge: false
     build_args:
@@ -306,15 +306,15 @@ steps:
     - name: docker
       path: /var/run/docker.sock
   when:
-    ref:
-      include:
-      - "refs/heads/master"
-      - "refs/heads/release/v*"
+    # ref:
+    #   include:
+    #   - "refs/heads/master"
+    #   - "refs/heads/release/v*"
     event:
     - push
 
 - name: docker-publish-head-installer
-  image: luistt/drone-publisher:amd64
+  image: rancherlabs/drone-publisher:v0.0.1
   settings:
     purge: false
     build_args:
@@ -342,7 +342,7 @@ steps:
     - push
 
 - name: docker-publish-head-agent
-  image: luistt/drone-publisher:amd64
+  image: rancherlabs/drone-publisher:v0.0.1
   settings:
     purge: false
     build_args:
@@ -370,7 +370,7 @@ steps:
     - push
 
 - name: docker-publish
-  image: luistt/drone-publisher:amd64
+  image: rancherlabs/drone-publisher:v0.0.1
   settings:
     purge: false
     build_args:
@@ -390,7 +390,7 @@ steps:
     - tag
 
 - name: docker-publish-installer
-  image: luistt/drone-publisher:amd64
+  image: rancherlabs/drone-publisher:v0.0.1
   settings:
     purge: false
     build_args:
@@ -411,7 +411,7 @@ steps:
     - tag
 
 - name: docker-publish-agent
-  image: luistt/drone-publisher:amd64
+  image: rancherlabs/drone-publisher:v0.0.1
   settings:
     purge: false
     build_args:
