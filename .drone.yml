@@ -698,6 +698,7 @@ trigger:
   event:
     exclude:
     - promote
+
 # ---
 # kind: pipeline
 # name: default-linux-s390x
