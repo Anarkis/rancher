@@ -287,7 +287,7 @@ steps:
     - tag
 
 - name: docker-publish-head
-  image: rancherlabs/drone-publisher:v0.0.1
+  image: rancherlabs/drone-publisher:v0.0.2
   settings:
     purge: false
     build_args:
@@ -314,7 +314,7 @@ steps:
     - push
 
 - name: docker-publish-head-installer
-  image: rancherlabs/drone-publisher:v0.0.1
+  image: rancherlabs/drone-publisher:v0.0.2
   settings:
     purge: false
     build_args:
@@ -342,7 +342,7 @@ steps:
     - push
 
 - name: docker-publish-head-agent
-  image: rancherlabs/drone-publisher:v0.0.1
+  image: rancherlabs/drone-publisher:v0.0.2
   settings:
     purge: false
     build_args:
@@ -370,7 +370,7 @@ steps:
     - push
 
 - name: docker-publish
-  image: rancherlabs/drone-publisher:v0.0.1
+  image: rancherlabs/drone-publisher:v0.0.2
   settings:
     purge: false
     build_args:
@@ -390,7 +390,7 @@ steps:
     - tag
 
 - name: docker-publish-installer
-  image: rancherlabs/drone-publisher:v0.0.1
+  image: rancherlabs/drone-publisher:v0.0.2
   settings:
     purge: false
     build_args:
@@ -411,7 +411,7 @@ steps:
     - tag
 
 - name: docker-publish-agent
-  image: rancherlabs/drone-publisher:v0.0.1
+  image: rancherlabs/drone-publisher:v0.0.2
   settings:
     purge: false
     build_args:
@@ -432,7 +432,7 @@ steps:
     - tag
 
 - name: github_binary_prerelease
-  image: plugins/github-release
+  image: rancherlabs/drone-github:v0.0.2
   settings:
     api_key:
       from_secret: github_token
@@ -452,7 +452,7 @@ steps:
       - "refs/tags/*-*"
 
 - name: github_binary_release
-  image: plugins/github-release
+  image: rancherlabs/drone-github:v0.0.2
   settings:
     api_key:
       from_secret: github_token
@@ -554,7 +554,7 @@ steps:
     - tag
 
 - name: docker-publish-head
-  image: rancherlabs/drone-publisher:v0.0.1
+  image: rancherlabs/drone-publisher:v0.0.2
   settings:
     purge: false
     build_args:
@@ -578,7 +578,7 @@ steps:
     - push
 
 - name: docker-publish-head-installer
-  image: rancherlabs/drone-publisher:v0.0.1
+  image: rancherlabs/drone-publisher:v0.0.2
   settings:
     purge: false
     build_args:
@@ -603,7 +603,7 @@ steps:
     - push
 
 - name: docker-publish-head-agent
-  image: rancherlabs/drone-publisher:v0.0.1
+  image: rancherlabs/drone-publisher:v0.0.2
   settings:
     purge: false
     build_args:
@@ -628,7 +628,7 @@ steps:
     - push
 
 - name: docker-publish
-  image: rancherlabs/drone-publisher:v0.0.1
+  image: rancherlabs/drone-publisher:v0.0.2
   settings:
     purge: false
     build_args:
@@ -648,7 +648,7 @@ steps:
     - tag
 
 - name: docker-publish-installer
-  image: rancherlabs/drone-publisher:v0.0.1
+  image: rancherlabs/drone-publisher:v0.0.2
   settings:
     purge: false
     build_args:
@@ -669,7 +669,7 @@ steps:
     - tag
 
 - name: docker-publish-agent
-  image: rancherlabs/drone-publisher:v0.0.1
+  image: rancherlabs/drone-publisher:v0.0.2
   settings:
     purge: false
     build_args:
