@@ -447,9 +447,9 @@ steps:
   when:
     event:
     - tag
-    ref:
-      include:
-      - "refs/tags/*-*"
+    # ref:
+    #   include:
+    #   - "refs/tags/*-*"
 
 # - name: github_binary_release
 #   image: rancherlabs/drone-github:v0.0.2
